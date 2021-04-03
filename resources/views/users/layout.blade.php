@@ -50,10 +50,13 @@
                 <!-- Button đăng ký, đăng nhập -->
                     <ul>
                         <li><a  href="{{route('logout')}}" style="line-height: 40px;color: #FFF;">( Đăng xuất )</a></li>
+                        
+                        <li><a style="color: #CCC; cursor: pointer;line-height: 40px;" href="{{route('giohang')}}"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
                         <li style="color: #FFF;line-height: 40px;"><i class="fa fa-address-book-o" style="font-size:20px; margin-right: 3px;"></i>  <a href="{{asset("thongtin/{$makh}")}}" style="color: #CCC; cursor: pointer;">{{Session::get('name_customer')}}</a></li>
                     </ul>
             @else
               <ul>
+             
                 <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#register">Đăng ký</button></li>
                 <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login">Đăng nhập</button></li>
               </ul>
