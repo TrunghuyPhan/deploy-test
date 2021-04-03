@@ -27,6 +27,6 @@ Route::post('/dangnhap','HomeController@dangnhap')->name('dangnhap');
 /*Đăng xuất*/
     Route::get('logout', function(){
         session()->flush();
-        // $tinh = DB::select("SELECT Tên FROM tinh");
+        
         return redirect(route("home"));
     })->name('logout');
