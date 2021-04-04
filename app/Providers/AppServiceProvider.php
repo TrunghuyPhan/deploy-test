@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\main_menu;
 use Illuminate\Support\ServiceProvider;
+use App\ProductTypes;
+use Illuminate\Support\Facades\DB;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +16,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
     }
 
     /**
@@ -23,6 +25,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // view()->composer('users.layout', function ($view1) {
+        //     $menu=main_menu::all();
+        //     $view1->with('menu',$menu);
+        // });
+
+        view()->composer('users.layout', function ($view) {
+            $Phone = DB::table('tbl_category_product')->select('*')
+                ->get();
+
+            $view->with('Phone', $Phone);
+        });
     }
 }
