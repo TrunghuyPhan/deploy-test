@@ -30,7 +30,7 @@ class DefaultCalculator implements Calculator
                 return round($cartItem->subtotal * ($cartItem->taxRate / 100), $decimals);
             case 'total':
                 return round($cartItem->subtotal + $cartItem->taxTotal, $decimals);
-                
+
             default:
                 return;
         }
