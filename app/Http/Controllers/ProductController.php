@@ -13,10 +13,6 @@ class ProductController extends Controller
     {
         $all_product = DB::table('tbl_product')->paginate(6);
         return view('product.products')->with('all_product', $all_product); //1
-
-        // $all_product = DB::select("SELECT * FROM tbl_product");
-        // return view('users.products')->with('all_product',$all_product); //1
-
     }
     public function Search()
     {
@@ -36,8 +32,6 @@ class ProductController extends Controller
             ->where('tbl_product.product_slug', $product_slug)->get();
         foreach ($details_product as $key => $value) {
             $category_id = $value->category_id;
-
-            //--seo
         }
 
         return view('product.details')->with('category', $cate_product)->with('brand', $brand_product)->with('product_details', $details_product);

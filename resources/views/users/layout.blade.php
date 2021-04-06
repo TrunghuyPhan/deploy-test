@@ -88,7 +88,7 @@
                     @foreach($Phone as $o)
                     @if($o->category_parent == $phone->category_id)
                     <!-- lấy thằng con -->
-                    <a class="dropdown-item" href="">{{$o->category_name}}</a>
+                    <a class="dropdown-item" href="{{URL::to('/category-product/'.$o->category_id)}}">{{$o->category_name}}</a>
                     <div class="dropdown-divider"></div>
                     @endif
                     @endforeach
