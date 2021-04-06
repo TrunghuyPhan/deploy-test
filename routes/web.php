@@ -31,7 +31,7 @@ Route::get('logout', function () {
     return redirect(route("home"));
 })->name('logout');
 // Chỉnh sua info KH
-Route::get('/thongtin/2', 'HomeController@Chinhsuainfo')->name('Chinhsuathongtin');
+Route::get('/thongtin/{makh}', 'HomeController@Chinhsuainfo')->name('Chinhsuathongtin');
 /* giỏ hàng */
 
 Route::post('/save-cart', 'GioHangController@save_cart');
