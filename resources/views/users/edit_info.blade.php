@@ -1,5 +1,6 @@
 @extends('users.layout')
 @section('content')
+<?php $makh = Session::get('id_customer'); ?>
 <div class="container">
     <h1>Chỉnh sua thong tin</h1>
     <div class="row">
@@ -141,10 +142,11 @@
             /*Kiểm tra xem đúng chưa để mở ajax truyền dữ liệu đi*/
             if (truyen == true) {
                 $.ajax({
-                    url: '{{route("Chinhsuathongtin")}}',
+                    url: '{{URL::to(' / thongtin / .$makh ')}}',
                     type: 'POST',
                     data: {
                         _token: '{{csrf_token()}}',
+                        MAKH: $makh,
                         CNTEN: ten,
                         CNSDT: sdt,
                         CNEMAIL: email,

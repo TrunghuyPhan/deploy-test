@@ -66,25 +66,16 @@ class HomeController extends Controller
         }
     }
     // Chinhsuainfo
-    public function Chinhsuainfo(Request $request)
+    public function Chinhsuainfo(Request $request, $makh)
     {
         $email = $request->CNEMAIL;
         $sdt = $request->CNSDT;
         $mk = md5($request->REMK);
         $name = $request->CNTEN;
-        $show = DB::select("SELECT * FROM tbl_customers WHERE Customer_id=?", [2]);
-        $them = DB::select("UPDATE tbl_customers SET Customer_email=? AND Customer_phone=? AND Customer_password=?
-        AND Customer_name=?
-        WHERE customer_id = ?", [$email, $sdt, $mk, $name, 2]);
-        // $kt->save();
-        // if (!$them) {
+        $show = DB::select("SELECT * FROM tbl_customers WHERE Customer_id=$makh");
 
-        //     /* trả kết quả về ajax*/
-        //     return \response()->json(['kq' => 1]);
-        // } else {
-        //     /* trả kết quả về ajax*/
-        //     return \response()->json(['kq' => 0]);
-        // }
+
+
         return view('users.edit_info')->with('chinhsua', $show);
     }
 }
