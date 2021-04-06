@@ -42,3 +42,5 @@ Route::post('/update-cart', 'GioHangController@update_cart');
 Route::get('/delete-to-cart/{rowId}', 'GioHangController@delete_to_cart');
 Route::get('/del-product/{session_id}', 'GioHangController@delete_product');
 Route::get('/del-all-product', 'GioHangController@delete_all_product');
+
+Route::get('/category-product/{category_id}', 'CategoryController@Category')->name('categoryproduct');
