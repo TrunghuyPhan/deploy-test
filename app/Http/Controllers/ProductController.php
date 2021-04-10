@@ -11,7 +11,7 @@ class ProductController extends Controller
 {
     public function AllProduct()
     {
-        $all_product = DB::table('tbl_product')->paginate(6);
+        $all_product = DB::table('tbl_product')->paginate(9);
         return view('product.products')->with('all_product', $all_product); //1
     }
     public function Search()

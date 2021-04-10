@@ -28,7 +28,9 @@
       </div>
     </div>
     @endforeach
-    {!! $all_product->links() !!}
+    <div style="margin-left:500px; marfin-top:50px">
+        {!! $all_product->links() !!} 
+    </div>
   </div>
 </div>
 
