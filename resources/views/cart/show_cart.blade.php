@@ -51,7 +51,7 @@ $content = Cart::content();
 				<td class="col-sm-1 col-md-1">
 					<a href="{{URL::to('/delete-to-cart/'.$v_content->rowId)}}">
 						<button hretype="button" class="btn btn-danger">
-							<span class="fa fa-remove"></span> Remove
+							<span class="fa fa-remove"></span> Xoá
 						</button>
 					</a>
 

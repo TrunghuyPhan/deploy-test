@@ -1,8 +1,11 @@
-
-
 @extends('users.layout')
 @section('content')
-<div class="container">
+<div class="container" style="margin-top: 50px;">
+  <div class="section-heading">
+    @foreach($category_pro as $product)
+    <h2>{{$product->category_name}}</h2>
+    @endforeach
+  </div>
   <div class="row">
     @foreach($category_pro as $product)
     <div class="col-md-4">
@@ -30,7 +33,7 @@
       </div>
     </div>
     @endforeach
-   
+
   </div>
 </div>
 
