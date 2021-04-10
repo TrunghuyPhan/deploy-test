@@ -4,6 +4,7 @@
   <div class="section-heading">
     @foreach($category_pro as $product)
     <h2>{{$product->category_name}}</h2>
+    @break
     @endforeach
   </div>
   <div class="row">
