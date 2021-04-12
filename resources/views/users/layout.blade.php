@@ -71,7 +71,7 @@
       <div class="container">
         <div class="row">
           <div class="col-2">
-            <img src="{{asset('img/logo1.png')}}" alt="" class="top-nav__logo">
+            <img src="https://chg.vn/cdn1/2018/08/hieu-ung-chiec-roi-da-31-.2085.png" alt="" class="top-nav__logo">
           </div>
           <div class="col-10">
             <nav class="navbar navbar-expand-sm justify-content-center">

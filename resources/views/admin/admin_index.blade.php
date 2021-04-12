@@ -40,11 +40,11 @@
                 </tr>
                 @foreach($all_product as $item)
                 <tr>
-                    <td>{{$item->product_id}}</td>
-                    <td>{{$item->product_name}}</td>
-                    <td>{{$item->product_quantity}}</td>
-                    <td>{{$item->category_id}}</td>
-                    <td>{{$item->product_price}}</td>
+                    <td><strong>{{$item->product_id}}</strong></td>
+                    <td><strong>{{$item->product_name}}</strong></td>
+                    <td><strong>{{$item->product_quantity}}</strong></td>
+                    <td><strong>{{$item->category_name}}</strong></td>
+                    <td><strong>{{number_format($item->product_price)}}</strong></td>
                     <td><img style="width: 100px;" src="{{$item->product_image}}"></td>
                     <td><a href="{{URL::to('/edit-product/'.$item->product_id)}}"><button class="btn btn-warning">Sửa</button></a></td>
                     <td><a href="{{URL::to('/delete-product/'.$item->product_id)}}"><button class="btn btn-warning">Xóa</button></a></td>
