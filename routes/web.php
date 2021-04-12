@@ -56,9 +56,20 @@ Route::post('admin/login', 'AdminController@PLogin')->name('admin_login');
 
 Route::prefix('admin')->group(function () {
     Route::get('/index', 'AdminController@index')->middleware('checkdangnhap')->name('admin_index');
-    Route::get('/themsanpham', 'AdminController@add_product')->middleware('checkdangnhap')->name('admin_add_pro');
+    //Route::get('/themsanpham', 'AdminController@add_product')->middleware('checkdangnhap')->name('admin_add_pro');
+   
     Route::get('logout', function () {
         session()->flush();
         return redirect(route("admin_login"));
     })->name('admin_logout');
 });
+
+
+////////////////////
+Route::get('/add-product','ProductController@add_product')->name('addproduct');
+Route::get('/edit-product/{product_id}','ProductController@edit_product')->name('editproduct');
+
+Route::post('/save-product','ProductController@save_product');
+Route::post('/update-product/{product_id}','ProductController@update_product');
+
+Route::get('/delete-product/{product_id}','ProductController@delete_product')->name('deleteproduct');

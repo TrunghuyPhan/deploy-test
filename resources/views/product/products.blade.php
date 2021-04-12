@@ -5,7 +5,7 @@
     @foreach($all_product as $key => $product)
     <div class="col-md-4">
       <div class="product-item">
-        <a href="{{URL::to('/product-details/'.$product->product_slug)}}"><img src="{{URL::to('/img/'.$product->product_image)}}" alt=""></a>
+        <a href="{{URL::to('/product-details/'.$product->product_slug)}}"><img src="{{$product->product_image}}" alt=""></a>
         <div class="down-content">
           <div class="title">
             <a href="{{URL::to('/product-details/'.$product->product_slug)}}">

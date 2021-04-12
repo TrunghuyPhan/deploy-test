@@ -32,7 +32,7 @@ if (isset($_REQUEST['ok'])) {
             while ($row = mysqli_fetch_assoc($sql)) { ?>
             <div  class="col-md-3">
 			<div class="product-item"><?php
-                echo '<a class="" href="./product-details/' . $row['product_slug'] . '"target="_self"> <img src="./img/' . $row['product_image'] . '" alt="' . $row['product_image'] . '"></a>'; ?>
+                echo '<a class="" href="./product-details/' . $row['product_slug'] . '"target="_self"> <img src="' . $row['product_image'] . '" alt="' . $row['product_image'] . '"></a>'; ?>
              <div class="down-content">
 				<div class="title">
                     <?php echo '<a class="" href="./product-details/' . $row['product_slug'] . '"target="_self">' . $row['product_name'] . '"</a><br>';

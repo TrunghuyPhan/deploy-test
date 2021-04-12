@@ -21,7 +21,7 @@
 
 					<div style="color:red" class="product-price-discount"><span>{{number_format($value->product_price)}}&#8363</span></div>
 				</div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<p>{{$value->product_desc}}</p>
 
 				<div class="product-count">
 					<label for="size">Số lượng</label>
@@ -54,12 +54,10 @@
 		</ul>
 		<div class="tab-content" id="myTabContent">
 			<div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-				@foreach($comment as $key => $value1)
-				<div class="product-name">{{$value1->comment}}</div>
-				@endforeach
+				
 
 
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+				{{$value->product_desc}}
 			</div>
 
 		</div>
@@ -79,7 +77,7 @@
 		@if($item->category_id == $value->category_id && $item->product_id!=$value->product_id)
 		<div class="col-md-3">
 			<div class="product-item">
-				<a href=""><img src="{{URL::to('/img/'.$item->product_image)}}" alt=""></a>
+				<a href=""><img src="{{$item->product_image}}" alt=""></a>
 				<div class="down-content">
 					<div class="title">
 						<a href="{{URL::to('/product-details/'.$item->product_slug)}}">
@@ -91,6 +89,7 @@
 		</div>
 		@endif
 		@endforeach
+		
 	</div>
 </div>
 
