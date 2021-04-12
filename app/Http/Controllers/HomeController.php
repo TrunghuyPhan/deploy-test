@@ -12,7 +12,7 @@ class HomeController extends Controller
 {
     public function Index()
     {
-        $all_product = DB::table('tbl_product')->where('product_status', '0')->orderby(DB::raw('RAND()'))->paginate(6);
+        $all_product = DB::table('tbl_product')->orderby('product_id','desc')->paginate(6);
         return view('users.home')->with('all_product', $all_product); //1
 
     }

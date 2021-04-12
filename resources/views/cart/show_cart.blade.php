@@ -23,7 +23,7 @@ $content = Cart::content();
 			<tr>
 				<td class="col-sm-8 col-md-6">
 					<div class="media">
-						<a class="thumbnail pull-left" href="#"> <img class="media-object" src="{{URL::to('./img/'.$v_content->options->image)}}" style=" height: 72px;"> </a>
+						<a class="thumbnail pull-left" href="#"> <img class="media-object" src="{{$v_content->options->image}}" style=" height: 72px;"> </a>
 						<div class="media-body">
 
 							<h5 style="font-weight: 500; " class="media-heading"><a style="color:black;" href="{{URL::to('./product-details/'.$v_content->options->slug)}}">{{$v_content->name}}</a></h5>

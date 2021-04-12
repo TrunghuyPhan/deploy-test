@@ -13,7 +13,7 @@
             </div>
 
             <div class="button-wrap">
-                <a href="{{route('admin_add_pro')}}">
+                <a href="{{route('addproduct')}}">
                     <button class="new-input">
                         <i class="fa fa-plus-square-o new-icon" style=" font-size: 17px;"></i>Thêm sản phẩm mới
                     </button>
@@ -45,9 +45,10 @@
                     <td>{{$item->product_quantity}}</td>
                     <td>{{$item->category_id}}</td>
                     <td>{{$item->product_price}}</td>
-                    <td><img style="width: 100px;" src="/img/{{$item->product_image}}"></td>
-                    <td><button class="btn btn-warning">Sửa</button></td>
-                    <td><button class="btn btn-danger">Xoá</button></td>
+                    <td><img style="width: 100px;" src="{{$item->product_image}}"></td>
+                    <td><a href="{{URL::to('/edit-product/'.$item->product_id)}}"><button class="btn btn-warning">Sửa</button></a></td>
+                    <td><a href="{{URL::to('/delete-product/'.$item->product_id)}}"><button class="btn btn-warning">Xóa</button></a></td>
+
                 </tr>
 
                 @endforeach

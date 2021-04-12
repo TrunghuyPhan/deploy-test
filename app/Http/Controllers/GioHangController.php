@@ -19,9 +19,9 @@ class GioHangController extends Controller
     public function show_cart(Request $request)
     {
         
-        $cate_product = DB::table('tbl_category_product')->where('category_status', '0')->orderby('category_id', 'desc')->get();
-        $brand_product = DB::table('tbl_brand')->where('brand_status', '0')->orderby('brand_id', 'desc')->get();
-        return view('cart.show_cart')->with('category', $cate_product)->with('brand', $brand_product);
+        $cate_product = DB::table('tbl_category_product')->get();
+      
+        return view('cart.show_cart')->with('category', $cate_product);
     }
 
     public function update_cart_quantity(Request $request)
@@ -41,7 +41,7 @@ class GioHangController extends Controller
         $data['qty'] = $quantity;
         $data['name'] = $product_info->product_name;
         $data['price'] = $product_info->product_price;
-        $data['options']['slug'] = $product_info->price_cost;
+        
         $data['weight'] = $product_info->product_price;
         $data['options']['image'] = $product_info->product_image;
         Cart::add($data);

@@ -23,7 +23,7 @@
       @foreach($all_product as $key => $product)
       <div class="col-md-4">
         <div class="product-item">
-          <a href="{{URL::to('/product-details/'.$product->product_slug)}}"><img src="{{URL::to('/img/'.$product->product_image)}}" alt=""></a>
+          <a href="{{URL::to('/product-details/'.$product->product_slug)}}"><img src="{{$product->product_image}}" alt=""></a>
           <div class="down-content">
             <div class="title">
               <a href="{{URL::to('/product-details/'.$product->product_slug)}}">
@@ -31,7 +31,7 @@
               </a>
             </div>
             <div class="price">
-              <h6>{{$product->product_price/1000}}.000VNĐ</h6>
+              <h6>{{number_format($product->product_price)}}&#8363</h6>
             </div>
 
             <ul class="stars">
