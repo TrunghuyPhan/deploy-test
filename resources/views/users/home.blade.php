@@ -1,11 +1,16 @@
 @extends('users.layout')
 @section('content')
-<div class="banner header-text">
-  <div class="owl-banner owl-carousel">
-    <div class="banner-item-01">
-      <div class="text-content">
-        <h4>Best Offer</h4>
-        <h2>New Arrivals On Sale</h2>
+<div class="container" style="margin-top:50px">
+  <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="https://cdn.tgdd.vn/2021/04/banner/S21-800-300-800x300.png" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://cdn.tgdd.vn/2021/03/banner/reno5-800-300-800x300-2.png" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://cdn.tgdd.vn/2021/04/banner/iphone-chung-800-300-800x300-1.png" alt="Third slide">
       </div>
     </div>
   </div>
@@ -49,5 +54,9 @@
     </div>
   </div>
 </div>
-
+<script>
+  $('.carousel').carousel({
+    interval: 2000
+  })
+</script>
 @endsection

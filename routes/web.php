@@ -57,7 +57,7 @@ Route::post('admin/login', 'AdminController@PLogin')->name('admin_login');
 Route::prefix('admin')->group(function () {
     Route::get('/index', 'AdminController@index')->middleware('checkdangnhap')->name('admin_index');
     //Route::get('/themsanpham', 'AdminController@add_product')->middleware('checkdangnhap')->name('admin_add_pro');
-   
+
     Route::get('logout', function () {
         session()->flush();
         return redirect(route("admin_login"));
@@ -66,10 +66,10 @@ Route::prefix('admin')->group(function () {
 
 
 ////////////////////
-Route::get('/add-product','ProductController@add_product')->name('addproduct');
-Route::get('/edit-product/{product_id}','ProductController@edit_product')->name('editproduct');
+Route::get('/add-product', 'ProductController@add_product')->middleware('checkdangnhap')->name('addproduct');
+Route::get('/edit-product/{product_id}', 'ProductController@edit_product')->middleware('checkdangnhap')->name('editproduct');
 
-Route::post('/save-product','ProductController@save_product');
-Route::post('/update-product/{product_id}','ProductController@update_product');
+Route::post('/save-product', 'ProductController@save_product')->middleware('checkdangnhap');
+Route::post('/update-product/{product_id}', 'ProductController@update_product')->middleware('checkdangnhap');
 
-Route::get('/delete-product/{product_id}','ProductController@delete_product')->name('deleteproduct');
+Route::get('/delete-product/{product_id}', 'ProductController@delete_product')->middleware('checkdangnhap')->name('deleteproduct');

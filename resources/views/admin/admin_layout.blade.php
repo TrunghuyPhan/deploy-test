@@ -20,12 +20,13 @@
 
             <div class="box-user">
                 <div class="avatar">
-                    <img src="https://thecrucible.org/wp-content/uploads/default_bio_600x600-1.jpg" alt="Girl in a jacket" width="50" height="50">
+                    <img src="<?php $hinh = Session::get('image_admin');
+                                echo ($hinh); ?>" alt="Girl in a jacket" width="50" height="50">
                 </div>
                 <p class="user-info">
                     <span id="fullname" class="profil-text">
-                        <?php $makh = Session::get('name_admin');
-                        echo ($makh);
+                        <?php $ten = Session::get('name_admin');
+                        echo ($ten);
                         ?>
                     </span>
                 </p>

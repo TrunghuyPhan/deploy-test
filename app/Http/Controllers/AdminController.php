@@ -12,7 +12,10 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $all_product = DB::table('tbl_product')->paginate(10);
+        $all_product = DB::table('tbl_product')
+            ->join('tbl_category_product', 'tbl_product.category_id', '=', 'tbl_category_product.category_id')
+            ->paginate(10);
+
         return view('admin.admin_index')->with('all_product', $all_product);
     }
     public function GLogin()
@@ -29,19 +32,17 @@ class AdminController extends Controller
         if ($dnkt) {
             $maADMIN = $dnkt[0]->admin_id;
             $name = $dnkt[0]->admin_name;
+            $image = $dnkt[0]->admin_image;
             $request->session()->put("id_admin", $maADMIN); // tạo session tên makh
             $request->session()->put("name_admin", $name);
+            $request->session()->put("image_admin", $image);
             /* trả về ajax*/
 
-            return \response()->json(['kq' => 1,  'id_admin' =>  $maADMIN, 'name_admin' => $name]);
+            return \response()->json(['kq' => 1,  'id_admin' =>  $maADMIN, 'name_admin' => $name, 'image_admin' => $image]);
         } else {
             /* trả về ajax*/
 
             return \response()->json(['kq' => 0]);
         }
-    }
-    public function add_product()
-    {
-        return view('admin.add_product');
     }
 }

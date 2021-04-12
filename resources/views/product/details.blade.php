@@ -11,7 +11,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-6">
-			<img style="height: auto;width:450px;" src="{{URL::to('/img/'.$value->product_image)}}" />
+			<img style="height: auto;width:450px;" src="{{$value->product_image}}" />
 
 		</div>
 		<div class="col-md-6">
@@ -49,12 +49,12 @@
 	<div class="product-info-tabs">
 		<ul class="nav nav-tabs" id="myTab" role="tablist">
 			<li class="nav-item">
-				<a class="nav-link" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
+				<a class="nav-link" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Mô tả sản phẩm</a>
 			</li>
 		</ul>
 		<div class="tab-content" id="myTabContent">
 			<div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-				
+
 
 
 				{{$value->product_desc}}
@@ -89,7 +89,7 @@
 		</div>
 		@endif
 		@endforeach
-		
+
 	</div>
 </div>
 
