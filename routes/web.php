@@ -44,3 +44,21 @@ Route::get('/del-product/{session_id}', 'GioHangController@delete_product');
 Route::get('/del-all-product', 'GioHangController@delete_all_product');
 
 Route::get('/category-product/{category_id}', 'CategoryController@Category')->name('categoryproduct');
+
+//admin
+// Route::prefix('admin')->group(function () {
+
+//     // Route::get('/', 'HomeController@Index')->name("home")->middleware(auth());
+//     Route::match(['get', 'post'], '/login', 'AdminController@Login')->name('admin_login');
+// });
+Route::get('/admin/login', 'AdminController@GLogin');
+Route::post('admin/login', 'AdminController@PLogin')->name('admin_login');
+
+Route::prefix('admin')->group(function () {
+    Route::get('/index', 'AdminController@index')->middleware('checkdangnhap')->name('admin_index');
+    Route::get('/themsanpham', 'AdminController@add_product')->middleware('checkdangnhap')->name('admin_add_pro');
+    Route::get('logout', function () {
+        session()->flush();
+        return redirect(route("admin_login"));
+    })->name('admin_logout');
+});
